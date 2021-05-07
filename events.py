@@ -1,9 +1,9 @@
 import logging
 
-import policies
+import routing_policies
 
 
-def arrival(env, service):
+def request_arrival(env, service):
     # logging.debug('Processing arrival {} for policy {} load {} seed {}'.format(service.service_id, env.policy, env.load, env.seed))
 
     success, dc, path = env.policy.route(service)
@@ -17,5 +17,11 @@ def arrival(env, service):
     env.setup_next_arrival() # schedules next arrival
 
 
-def departure(env, service):
+def request_departure(env, service):
     env.release_path(service)
+
+def disaster_arrival(env, disaster):
+    pass
+
+def disaster_departure(env, disaster):
+    pass

@@ -6,7 +6,7 @@ import numpy as np
 
 import events
 import plots
-import policies
+import routing_policies
 
 
 class Environment:
@@ -84,7 +84,7 @@ class Environment:
             self.policy = policy # parameter has precedence over argument
             self.policy.env = self
         else:
-            self.policy = policies.ClosestAvailableDC() # closest DC by default
+            self.policy = routing_policies.ClosestAvailableDC() # closest DC by default
             self.policy.env = self
 
         if topology is not None:
@@ -207,7 +207,7 @@ class Environment:
 
         #TODO: number of units necessary can also be randomly selected, now it's always one
         next_arrival = Service(self._processed_arrivals, at, ht, src, src_id, network_units=1, computing_units=1)
-        self.add_event(Event(next_arrival.arrival_time, events.arrival, next_arrival))
+        self.add_event(Event(next_arrival.arrival_time, events.request_arrival, next_arrival))
 
     def set_load(self, load=None, mean_service_holding_time=None):
         if load is not None:
@@ -248,7 +248,7 @@ class Environment:
         self._update_network_stats()
 
         # schedule departure
-        self.add_event(Event(service.arrival_time + service.holding_time, events.departure, service))
+        self.add_event(Event(service.arrival_time + service.holding_time, events.request_departure, service))
 
     def reject_service(self, service):
         service.provisioned = False
@@ -326,6 +326,18 @@ def run_simulation(env):
     # prepare observations
     logger.info(f'Finishing simulation for load {env.load} and policy {env.policy.name}')
 
+
+"""class Disaster:
+
+    def arrival_time():
+        
+    def duration():
+        
+    def failed_links():
+        
+    def failed_nodes():
+
+"""
 
 class Service:
     """"

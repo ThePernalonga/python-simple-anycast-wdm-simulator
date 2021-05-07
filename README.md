@@ -42,7 +42,7 @@ The following files are available:
     - ```departure(env: Environment, service: Service)```: function that is called when the resources associated with a service should be released, i.e., the service has reached its holding time.
 - [graph](./graph.py): File containing helper functions that read topologies from [SNDlib](http://sndlib.zib.de/) format and converts it into NetworkX graphs. Also has helper functions for path computation and data center placement.
 - [plots](./plots.py): File containing helper functions to plot the simulation progress and the final results.
-- [policies](./policies.py): File containing the routing algorithms to be used by the simulator. This is the file that should be used to implement new routing algorithms.
+- [policies](routing_policies.py): File containing the routing algorithms to be used by the simulator. This is the file that should be used to implement new routing algorithms.
 - [run](./run.py): File containing the main script of the simulation. Run `python run.py --help` to get a list of arguments that can be passed.
 - [notebook](reading-results.ipynb): File containing a Jupyter notebook where the final binary results file is read and results are plotted. Also show how to plot topologies using the NetworkX module.
 

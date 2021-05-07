@@ -17,7 +17,7 @@ from multiprocessing import Manager
 import core
 import graph
 import plots
-import policies
+import routing_policies
 
 
 def run(uargs):
@@ -68,11 +68,11 @@ def run(uargs):
     for policy in exec_policies: # runs the simulations for two policies
         for load in loads:
             if policy == 'CADC':
-                policy_instance = policies.ClosestAvailableDC()
+                policy_instance = routing_policies.ClosestAvailableDC()
             elif policy == 'FADC':
-                policy_instance = policies.FarthestAvailableDC()
+                policy_instance = routing_policies.FarthestAvailableDC()
             elif policy == 'FLB':
-                policy_instance = policies.FullLoadBalancing()
+                policy_instance = routing_policies.FullLoadBalancing()
             else:
                 raise ValueError('Policy was not configured correctly (value set to {})'.format(policy))
             env_topology = copy.deepcopy(topology) # makes a deep copy of the topology object
