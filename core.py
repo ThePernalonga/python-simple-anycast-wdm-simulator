@@ -32,7 +32,7 @@ class Environment:
         if args is not None and hasattr(args, "num_seeds"):
             self.num_seeds = args.num_seeds
         else:
-            self.num_seeds = 25
+            self.num_seeds = 5
 
         # defines the number of DCs to be placed in the topology
         if args is not None and hasattr(args, "num_dcs"):
@@ -70,8 +70,8 @@ class Environment:
             self.topology_file = args.topology_file
             self.topology_name = args.topology_file.split('.')[0]
         else:
-            self.topology_file = "nobel-us.xml"#"nobel-us.xml" #"test-topo.xml"
-            self.topology_name = 'nobel-us'
+            self.topology_file = "test.xml"#"nobel-us.xml" #"test-topo.xml"
+            self.topology_name = 'test'
             # self.topology_file = "simple"  # "nobel-us.xml" #"test-topo.xml"
             # self.topology_name = 'simple'
 
