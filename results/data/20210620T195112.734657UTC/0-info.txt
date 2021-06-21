@@ -1,0 +1,4 @@
+Date (UTC):          2021-06-20 19:51:12.735038+00:00
+Date (local):        2021-06-20 19:51:12.735064
+Command:             run.py
+Arguments:           Namespace(dc_placement='degree', k_paths=5, load_step=50, max_load=700, min_load=300, num_arrivals=10000, num_dcs=2, num_seeds=5, output_folder='data', plot_simulation_progress=False, seed=42, temporary_plot_every=5, threads=6, topology_file='test.xml')

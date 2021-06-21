@@ -25,3 +25,11 @@ def disaster_arrival(env, disaster):
 
 def disaster_departure(env, disaster):
     pass
+
+''' 
+Pegar o grafo como parametro, receber os links que deram problema
+env = core.Environment(uargs, topology=topology)
+disaster = [nodesDisaster[], linksDisaster[]]
+
+Disaster() -> Retira (false) esses Edges do grafo.
+''' 

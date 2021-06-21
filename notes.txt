@@ -1,0 +1,22 @@
+Verdadeiro ou falso, Vetor dos links quebrados
+
+Dois conj de informações a serem armazenados a ser quebrado
+
+
+- Vetor de links quebrados
+- Vetor de conexoes afetadas ( Restaurá-las: Encontrar outro caminho )
+---> Ordenar segundo a classe (Prioridade)
+
+
+-> Que não conseguiu retornar 
+Rodar algoritmo de roteamento para achar banda disponível
+
+-> Existia uma aresta (A, B) F
+
+**
+    Arrival_F registrar links quebrados e conexoes afetadas
+    --> Routing para retornar conexoes
+    Depart_F Tornar verdadeira o Vetor de links quebrados
+**
+
+--> ID de Arriv e Depart para buscar as funções e não rodar o Departure

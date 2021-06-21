@@ -3,6 +3,7 @@ import random
 import heapq
 import multiprocessing
 import numpy as np
+from datetime import datetime
 
 import events
 import plots
@@ -329,13 +330,27 @@ def run_simulation(env):
 
 """class Disaster:
 
+    def __init__(self, graph, brokenNodes, brokenLinks):
+
+    # Save the IDs of the broken nodes and links 
+        self.disastNodes = brokenNodes
+        self.disastLinks = brokenLinks
+
     def arrival_time():
+      time = datetime.now()
         
-    def duration():
+    #def duration():
         
-    def failed_links():
+    #def failed_links():
         
-    def failed_nodes():
+    #def failed_nodes():
+
+    def Arrival_F(self):
+        disastNodes = brokenNodes
+        disastLinks = brokenLinks
+        
+    def Depart_F(self):
+        pass
 
 """
 

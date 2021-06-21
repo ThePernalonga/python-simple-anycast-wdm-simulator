@@ -1,6 +1,7 @@
 from itertools import islice
 from operator import itemgetter
 import math
+import matplotlib.pyplot as plt
 from xml.dom.minidom import parse
 import xml.dom.minidom
 import networkx as nx
@@ -54,6 +55,7 @@ def read_sndlib_topology(file):
 
         graph.graph["coordinatesType"] = document.getElementsByTagName("nodes")[0].getAttribute("coordinatesType")
 
+        # Stores the "node" elements on the XML file on nodes
         nodes = document.getElementsByTagName("node")
         for node in nodes:
             x = node.getElementsByTagName("x")[0]
@@ -86,6 +88,14 @@ def get_topology(args):
         topology = read_sndlib_topology(args.topology_file)
     else:
         raise ValueError('Supplied topology is unknown')
+
+    #x_p = np.array([0, 5]) 
+    #y_p = np.array([0, 5])
+
+    nx.draw_networkx(topology)
+    #plt.plot(x_p, y_p)
+    plt.show()
+    
     return topology
 
 

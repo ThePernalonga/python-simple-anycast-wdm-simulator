@@ -8,9 +8,10 @@ import datetime
 import time
 import shutil
 import sys
-import git
+#import git
 import os
 import numpy as np
+import networkx as nx
 from multiprocessing import Pool
 from multiprocessing import Manager
 
@@ -46,12 +47,12 @@ def run(uargs):
         width = 20
         print('Date (UTC):'.ljust(width), datetime.datetime.now(datetime.timezone.utc), file=file)
         print('Date (local):'.ljust(width), datetime.datetime.now(), file=file)
-        repo = git.Repo()
-        print('Commit date:'.ljust(width),
-              datetime.datetime.fromtimestamp(repo.head.object.committed_date).strftime('%Y-%m-%d %H:%M:%S'),
-              file=file)
-        print('Author:'.ljust(width), repo.head.object.committer, file=file)
-        print('GIT hexsha:'.ljust(width), repo.head.object.hexsha, file=file)
+        #repo = git.Repo()
+        #print('Commit date:'.ljust(width),
+        #      datetime.datetime.fromtimestamp(repo.head.object.committed_date).strftime('%Y-%m-%d %H:%M:%S'),
+        #      file=file)
+        #print('Author:'.ljust(width), repo.head.object.committer, file=file)
+        #print('GIT hexsha:'.ljust(width), repo.head.object.hexsha, file=file)
         print('Command:'.ljust(width), ' '.join(sys.argv), file=file)
         print('Arguments:'.ljust(width), args, file=file)
 
@@ -165,4 +166,15 @@ if __name__ == '__main__':
     parser.add_argument('-o', '--output_folder', default=env.output_folder,
                         help='Output folder inside results (default={})'.format(env.output_folder))
     args = parser.parse_args()
+
+   """" 
+    brokenNodes = ["A", "B"]
+
+    for node in brokenNodes:
+
+    brokenLinks = ["A", "B"]
+    core.Disaster(graph, )
+    """
     run(args)
+
+    
